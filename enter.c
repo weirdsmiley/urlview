@@ -307,6 +307,17 @@ int mutt_enter_string (unsigned char *buf, size_t buflen, int y, int x,
 	    if (!pass)
 	      redraw = M_REDRAW_EOL;
 	  }
+	  else if (curpos == lastchar)
+      {
+        if (lastchar > begin)
+        {
+          buf[lastchar] = '\0';
+          curpos--;
+          lastchar--;
+        }
+        if (!pass)
+            redraw = M_REDRAW_EOL;
+      }
 	  else
 	    BEEP ();
 	  break;
