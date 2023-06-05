@@ -159,7 +159,7 @@ int main (int argc, char **argv)
   char buf[1024];
   char command[1024];
   char regexp[1024];
-  char search[1024];
+  char search[1024] = {0};
   char scratch[1024];
   char wrapchoice[1024];
   char **url;
